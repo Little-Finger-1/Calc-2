@@ -1,0 +1,267 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<title>
+電卓（改）のプログラム
+</title>
+</head>
+
+<body background="../Image/background/back3.png"bgproperties="fixed">
+<font size="2"><font color="white">
+
+Option Explicit<br>
+<br>
+'電卓を初期化するプログラム<br>
+Sub 電卓AC()<br>
+<br>
+Cells(2, 8).Value = "0"<br>
+Cells(4, 8).Value = "0"<br>
+Cells(5, 8).Value = "0"<br>
+Cells(6, 8).Value = "0"<br>
+<br>
+End Sub<br>
+<br>
+'電卓の表示を消すプログラム<br>
+Sub 電卓OFF()<br>
+<br>
+Cells(2, 8).Value = " "<br>
+Cells(4, 8).Value = " "<br>
+Cells(5, 8).Value = " "<br>
+Cells(6, 8).Value = " "<br>
+<br>
+End Sub<br>
+<br>
+'「1」ボタンのプログラム<br>
+Sub 電卓1()<br>
+<br>
+'OFFのままじゃ使えない<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+'1のボタンの本来の役割<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 1<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓2()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 2<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓3()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 3<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓4()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 4<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓5()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 5<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓6()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 6<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓7()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 7<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓8()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 8<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓9()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10 + 9<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓0()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 10<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓00()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(2, 8).Value = Cells(2, 8) * 100<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+'足し算にシフトするプログラム<br>
+Sub 電卓プラス()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+'メモリ2を書き換えて足し算用のプログラムにする<br>
+Else<br>
+Cells(4, 8).Value = Cells(2, 8)<br>
+Cells(2, 8) = "0"<br>
+Cells(5, 8) = "1"<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓マイナス()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(4, 8).Value = Cells(2, 8)<br>
+Cells(2, 8) = "0"<br>
+Cells(5, 8) = "2"<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓ディバイド()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(4, 8).Value = Cells(2, 8)<br>
+Cells(2, 8) = "0"<br>
+Cells(5, 8) = "3"<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+Sub 電卓マルチ()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(4, 8).Value = Cells(2, 8)<br>
+Cells(2, 8) = "0"<br>
+Cells(5, 8) = "4"<br>
+<br>
+End If<br>
+<br>
+End Sub<br>
+<br>
+'結果を表示するプログラム<br>
+Sub 電卓イコール()<br>
+<br>
+If Cells(2, 8) = " " Then<br>
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")<br>
+<br>
+Else<br>
+Cells(6, 8).Value = Cells(2, 8)<br>
+Cells(2, 8) = "0"<br>
+<br>
+ '足し算だったら<br>
+ If Cells(5, 8) = "1" Then<br>
+ Cells(2, 8) = Cells(4, 8) + Cells(6, 8)<br>
+<br>
+ '引き算だったら<br>
+ ElseIf Cells(5, 8) = "2" Then<br>
+ Cells(2, 8) = Cells(4, 8) - Cells(6, 8)<br>
+<br>
+ '割り算だったら<br>
+ ElseIf Cells(5, 8) = "3" Then<br>
+ Cells(2, 8) = Cells(4, 8) / Cells(6, 8)<br>
+<br>
+ '掛け算だったら<br>
+ ElseIf Cells(5, 8) = "4" Then<br>
+ Cells(2, 8) = Cells(4, 8) * Cells(6, 8)<br>
+<br>
+ Else: MsgBox ("メモリにエラーが発生しました。ON/ACボタンを押してやり直してください")<br>
+<br>
+ End If<br>
+End If<br>
+<br>
+End Sub<br>
+
+<hr color="royalblue">
+
+<iframe allowtransparency="true"src="rink.html"frameborder="0"width="100%"heigth="100">
+サンプル
+</iframe>
+
+</body>
+</html>

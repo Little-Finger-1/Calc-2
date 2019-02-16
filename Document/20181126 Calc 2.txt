@@ -1,0 +1,247 @@
+Option Explicit
+
+'電卓を初期化するプログラム
+Sub 電卓AC()
+
+Cells(2, 8).Value = "0"
+Cells(4, 8).Value = "0"
+Cells(5, 8).Value = "0"
+Cells(6, 8).Value = "0"
+
+End Sub
+
+'電卓の表示を消すプログラム
+Sub 電卓OFF()
+
+Cells(2, 8).Value = " "
+Cells(4, 8).Value = " "
+Cells(5, 8).Value = " "
+Cells(6, 8).Value = " "
+
+End Sub
+
+'「1」ボタンのプログラム
+Sub 電卓1()
+
+'OFFのままじゃ使えない
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+'1のボタンの本来の役割
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 1
+
+End If
+
+End Sub
+
+Sub 電卓2()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 2
+
+End If
+
+End Sub
+
+Sub 電卓3()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 3
+
+End If
+
+End Sub
+
+Sub 電卓4()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 4
+
+End If
+
+End Sub
+
+Sub 電卓5()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 5
+
+End If
+
+End Sub
+
+Sub 電卓6()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 6
+
+End If
+
+End Sub
+
+Sub 電卓7()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 7
+
+End If
+
+End Sub
+
+Sub 電卓8()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 8
+
+End If
+
+End Sub
+
+Sub 電卓9()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10 + 9
+
+End If
+
+End Sub
+
+Sub 電卓0()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 10
+
+End If
+
+End Sub
+
+Sub 電卓00()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(2, 8).Value = Cells(2, 8) * 100
+
+End If
+
+End Sub
+
+'足し算にシフトするプログラム
+Sub 電卓プラス()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+'メモリ2を書き換えて足し算用のプログラムにする
+Else
+Cells(4, 8).Value = Cells(2, 8)
+Cells(2, 8) = "0"
+Cells(5, 8) = "1"
+
+End If
+
+End Sub
+
+Sub 電卓マイナス()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(4, 8).Value = Cells(2, 8)
+Cells(2, 8) = "0"
+Cells(5, 8) = "2"
+
+End If
+
+End Sub
+
+Sub 電卓ディバイド()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(4, 8).Value = Cells(2, 8)
+Cells(2, 8) = "0"
+Cells(5, 8) = "3"
+
+End If
+
+End Sub
+
+Sub 電卓マルチ()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(4, 8).Value = Cells(2, 8)
+Cells(2, 8) = "0"
+Cells(5, 8) = "4"
+
+End If
+
+End Sub
+
+'結果を表示するプログラム
+Sub 電卓イコール()
+
+If Cells(2, 8) = " " Then
+MsgBox ("電卓を起動させて下さい（ON/ACボタン）")
+
+Else
+Cells(6, 8).Value = Cells(2, 8)
+Cells(2, 8) = "0"
+
+ '足し算だったら
+ If Cells(5, 8) = "1" Then
+ Cells(2, 8) = Cells(4, 8) + Cells(6, 8)
+
+ '引き算だったら
+ ElseIf Cells(5, 8) = "2" Then
+ Cells(2, 8) = Cells(4, 8) - Cells(6, 8)
+
+ '割り算だったら
+ ElseIf Cells(5, 8) = "3" Then
+ Cells(2, 8) = Cells(4, 8) / Cells(6, 8)
+
+ '掛け算だったら
+ ElseIf Cells(5, 8) = "4" Then
+ Cells(2, 8) = Cells(4, 8) * Cells(6, 8)
+
+ Else: MsgBox ("メモリにエラーが発生しました。ON/ACボタンを押してやり直してください")
+
+ End If
+End If
+
+End Sub
